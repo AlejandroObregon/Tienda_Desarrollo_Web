@@ -16,7 +16,7 @@ public class CategoriaController {
     @Autowired
     CategoriaService categoriaService;
     
-    @RequestMapping("listado")
+    @RequestMapping("/listado")
     public String inicio(Model model) {
         List<Categoria> lista = categoriaService.getCategorias(false);
         model.addAttribute("categorias", lista);

@@ -12,11 +12,11 @@ import org.springframework.stereotype.Service;
 public class CategoriaServiceImpl implements CategoriaService{
 
     @Autowired
-    private CategoriaDao CategoriaDao;
+    private CategoriaDao categoriaDao;
     
     @Override
     public List<Categoria> getCategorias(boolean activos) {
-        List<Categoria> lista = CategoriaDao.findAll();
+        List<Categoria> lista = categoriaDao.findAll();
         
         if(activos){
             lista.removeIf(e -> !e.isActivo());
